@@ -1,0 +1,14 @@
+﻿.subheader {
+    margin-bottom: 15px !important;
+}
+
+
+.dtTable tfoot tr th, .dtTable tfoot tr td {
+    padding: 0px !important;
+    border-bottom: 2px solid silver;
+}
+.dtTable tfoot tr th input {
+    border:none !important;
+    border-radius:0px !important;
+    background-color:transparent !important;
+}

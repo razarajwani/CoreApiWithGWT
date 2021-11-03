@@ -1,0 +1,15 @@
+﻿https://www.youtube.com/watch?v=l56YLbAVAfo
+
+
+Step1: Pass username with password to the login api to authenticate and generate the JWT Token
+http://localhost:42324/api/login?username=raza&pass=123
+Result:
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYXphIiwiZW1haWwiOiJyYXphcmFqd2FuaUBsaXZlLmNvbSIsImp0aSI6IjIyOGIxZWNkLTM2MzYtNGQ5OC05OTdlLWMwYzJmYzEyODUyNCIsImV4cCI6MTYxNzM3NjQyOSwiaXNzIjoiY29kZXdpdGhyYXphLmNvbSIsImF1ZCI6ImNvZGV3aXRocmF6YS5jb20ifQ.DYYm1xUOAcZ17EBTN3ZYdSF3cdF_bAywjPPsokveJoE"}
+
+
+Step2: Call the API using the above token in postman 
+API URL: http://localhost:42324/weatherforecast
+Headers:
+	Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYXphIiwiZW1haWwiOiJyYXphcmFqd2FuaUBsaXZlLmNvbSIsImp0aSI6IjczYzE2MzEyLWU0M2EtNDc5Yy04NTg2LTRjODUzNzNhNGUxNSIsImV4cCI6MTYxNzUzMjA1MCwiaXNzIjoiY29kZXdpdGhyYXphLmNvbSIsImF1ZCI6ImNvZGV3aXRocmF6YS5jb20ifQ.JQPjT6Yvk_hnzDvTz5mYKtnLjR4Hg3JXYFtPDOF6_xM
+
+

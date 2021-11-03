@@ -1,0 +1,88 @@
+﻿
+<div>
+
+    <div class="subheader">
+        <h1 class="subheader-title">
+            <i class='subheader-icon fal fa-list'></i> Categories <span class='fw-300'></span> <sup class='badge badge-primary fw-500'></sup>
+            <small>List of Categories </small>
+        </h1>
+        <!--
+        Right content on content header
+        A nice area to add graphs or buttons -->
+        <div class="subheader-block">
+            <a href="@(Lib.Settings.baseUrl)category/action" class="btn btn-primary"><i class="fal fa-plus fa-fw"></i> Add New</a>
+        </div>
+    </div>
+
+    <!-- Your main content goes below here: -->
+    <div class="row">
+
+        <div class="col-xl-12">
+            <div id="panel-1" class="panel">
+                <div class="panel-hdr">
+                    <h2>
+                        Categories <span class="fw-300"><i>List</i></span>
+                    </h2>
+                    <div class="panel-toolbar">
+                        @*<button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>*@
+                        <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
+                        @*<button class="btn btn-panel" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"></button>*@
+                    </div>
+                </div>
+                <div class="panel-container show">
+                    <div class="panel-content  ">
+                        @*<div class="panel-tag">It stash and was even had of collection the latest story still every or times derive come way. Travelling business ill. Helplessly starting didn't should he her bad will so through audiences to the supported congress, if card with was way allows century quarter the control village for of payload.</div>*@
+
+                        <table class="table m-0 table-bordered dtTable">
+                            <thead class="thead-light ">
+                                <tr>
+                                    <th style="width:30px">#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th style="width:30px"></th>
+                                    <th style="width:30px"></th>
+                                </tr>
+                            </thead>
+                            <tfoot style="display:table-row-group">
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @for (int i = 1; i <= 1000; i++)
+                                {
+
+                                    <tr>
+                                        <th scope="row">@i</th>
+                                        <td>Mark @i</td>
+                                        <td> @(Lib.CryptoEngine.Encrypt(i.ToString()))</td>
+                                        <td>@(Lib.CryptoEngine.Decrypt(Lib.CryptoEngine.Encrypt(i.ToString())))</td>
+                                        <td class="text-center"><a href="@(Lib.Settings.baseUrl)category/action?id=@(Lib.CryptoEngine.Encrypt(i.ToString()))"><i class="fal fa-edit fa-fw"></i></a></td>
+                                        <td class="text-center"><a href="javascript:void(0)"><i class="fal fa-trash fa-fw"></i></a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            _initDatatable('.dtTable');
+        })
+    </script>
+}

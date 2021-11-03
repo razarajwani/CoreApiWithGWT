@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@using SmartAdminNetCore.Resources
+@inject LocService SharedLocalizer
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+        .ToList();
+
+    var currentLang = requestCulture.RequestCulture.UICulture.Name;
+}
+
+@foreach (var item in cultureItems)
+{
+    <form asp-controller="SetLanguage" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" role="form">
+        <input type="hidden" name="culture" value="@item.Value" />
+        <button type="submit" class="dropdown-item" >@item.Text</button>
+    </form>
+
+}
+
+@*<div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
+    <form class="form-inline" id="frmLanguageSelector" asp-controller="SetLanguage" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" role="form">
+            <select class="custom-select" name="culture"
+                        asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                        asp-items="cultureItems"
+                        onchange="$('#frmLanguageSelector').submit();">
+                </select>
+        </form>
+</div>*@

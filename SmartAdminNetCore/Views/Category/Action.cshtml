@@ -1,0 +1,204 @@
+﻿@inject SmartAdminNetCore.Resources.LocService SharedLocalizer
+
+@{
+    string id = Model.recId;
+}
+
+
+
+<form id="frmAction" class="needs-validation">
+    <!--novalidate-->
+
+
+    <div class="subheader">
+        <h1 class="subheader-title">
+            <i class='subheader-icon fal fa-list'></i> @SharedLocalizer.GetLocalizedHtmlString("Categories")
+             @id <span class='fw-300'></span> <sup class='badge badge-primary fw-500'></sup>
+            <small>List of Categories </small>
+        </h1>
+        <!--
+        Right content on content header
+        A nice area to add graphs or buttons -->
+        <div class="subheader-block ">
+
+            <button type="submit" class="btn btn-primary"><i class="fal fa-save fa-fw"></i> Save</button>
+            &nbsp;
+            <a href="@(Lib.Settings.baseUrl)category" class="btn btn-default"><i class="fal fa-arrow-left fa-fw"></i> Cancel</a>
+        </div>
+    </div>
+    <!-- Your main content goes below here: -->
+    <div class="row">
+
+        <div class="col-xl-12">
+
+
+
+
+            <div id="panel-5" class="panel">
+                <div class="panel-hdr">
+                    <h2>
+                        Category <span class="fw-300"><i>Detail</i></span>
+                    </h2>
+                    <div class="panel-toolbar">
+                        <button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
+                        <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
+                    </div>
+                </div>
+                <div class="panel-container show">
+                    <div class="panel-content">
+                        <div class="panel-tag">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever <code>since the 1500s</code>, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        </div>
+                    </div>
+                    <div class="panel-content p-0">
+                        <div class="row">
+                            <div class="col-lg-8 ">
+                                <div class="panel-content">
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label" for="validationTooltip01">الاسم الكامل <span class="text-danger">*</span> </label>
+                                            <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Codex" required>
+                                            @*<div class="valid-tooltip">Looks good!</div>*@
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label" for="validationTooltip03">Username <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupPrepend2">@@</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="validationTooltip03" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                                                <div class="invalid-tooltip">
+                                                    Please choose a username.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row form-group">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label" for="validationTooltip04">City <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="validationTooltip04" placeholder="City" required>
+                                            <div class="invalid-tooltip">
+                                                Please provide a valid city.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label" for="validationTooltip05">State <span class="text-danger">*</span></label>
+                                            <select class="custom-select" required id="validationTooltip05">
+                                                <option value="">State</option>
+                                                <option value="1">Michigan</option>
+                                                <option value="2">New York</option>
+                                                <option value="3">Oklahoma</option>
+                                            </select>
+                                            <div class="invalid-tooltip">
+                                                Please provide a valid state.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label" for="validationTooltip06">Zip </label>
+                                            <input type="text" class="form-control" id="validationTooltip06" placeholder="Zip">
+                                            <div class="invalid-tooltip"></div>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label" for="validationTooltip07">Comment </label>
+                                            <textarea class="form-control" id="validationTooltip07" placeholder="Required example textarea"></textarea>
+                                            <div class="invalid-tooltip">
+                                                Please enter a message in the textarea.
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label mb-2">Please disclose your gender profile <span class="text-danger">*</span></label>
+                                            <div class="custom-control custom-radio mb-2">
+                                                <input type="radio" class="custom-control-input" id="validationTooltipGenderMale" name="radio-stacked" required="">
+                                                <label class="custom-control-label" for="validationTooltipGenderMale">Male</label>
+                                            </div>
+                                            <div class="custom-control custom-radio mb-2">
+                                                <input type="radio" class="custom-control-input" id="validationTooltipGenderFemale" name="radio-stacked" required="">
+                                                <label class="custom-control-label" for="validationTooltipGenderFemale">Female</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" id="validationTooltipgenderPrivate" name="radio-stacked" required="">
+                                                <label class="custom-control-label" for="validationTooltipgenderPrivate">Prefer not to say</label>
+                                                <div class="invalid-tooltip">Please select at least one</div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix m-2"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Center Transparent -->
+    <div id="confirm" class="modal fade example-modal-centered-transparent" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-transparent" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-white">
+                        Confirm ?
+                        <small class="m-0 text-white opacity-70">
+                            Are you sure you want to save ?
+                        </small>
+                    </h4>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button id="btnSubmit" type="submit" class="btn btn-primary"><i class="fal fa-save fa-fw"></i> Save Changes</button>
+                    <button id="btnCancel" type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+
+@section scripts{
+
+    <script>
+        $('#frmAction').submit(function (e) {
+            e.preventDefault();
+            $('#confirm').modal('show');
+        });
+
+
+        $('#confirm #btnSubmit').click(function () {
+            window.location = '/category';
+        });
+
+    </script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+    </script>
+}

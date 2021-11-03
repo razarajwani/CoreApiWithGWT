@@ -1,0 +1,54 @@
+﻿@inject SmartAdminNetCore.Resources.LocService SharedLocalizer
+
+@{
+    string _baseUrl = Convert.ToString(ViewData["baseUrl"]);
+}
+
+<ul id="js-nav-menu" class="nav-menu">
+    <li class="active">
+        <a href="@(_baseUrl)" title="Blank Project" data-filter-tags="blank page">
+            <i class="fal fa-chart-bar"></i>
+            <span class="nav-link-text" data-i18n="nav.blankpage">@SharedLocalizer.GetLocalizedHtmlString("Dashboard")</span>
+        </a>
+    </li>
+    <li class="nav-title">@SharedLocalizer.GetLocalizedHtmlString("GeneralSettings") </li>
+    <li class="active">
+        <a href="#" title="Category" data-filter-tags="category">
+            <i class="fal fa-sitemap"></i>
+            <span class="nav-link-text" data-i18n="nav.category">@SharedLocalizer.GetLocalizedHtmlString("Category")</span>
+        </a>
+        <ul>
+            <li>
+                <a href="@(_baseUrl)category/action" title="Menu child" data-filter-tags="utilities menu child">
+                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child">@SharedLocalizer.GetLocalizedHtmlString("AddNewCategory") </span>
+                </a>
+            </li>
+            <li>
+                <a href="@(_baseUrl)category" title="Menu child" data-filter-tags="utilities menu child">
+                    <span class="nav-link-text" data-i18n="nav.utilities_menu_child">@SharedLocalizer.GetLocalizedHtmlString("CategoryList")</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <!-- Example of open and active states -->
+    @*<li class="active ">
+            <a href="#" title="Category" data-filter-tags="category">
+                <i class="fal fa-plus"></i>
+                <span class="nav-link-text" data-i18n="nav.category">Open Item</span>
+            </a>
+            <ul>
+                <li class="active open">
+                    <a href="javascript:void(0);" title="Menu child" data-filter-tags="utilities menu child">
+                        <span class="nav-link-text" data-i18n="nav.utilities_menu_child">Open Sub-category</span>
+                    </a>
+                    <ul>
+                        <li class="active">
+                            <a href="javascript:void(0);" title="Sublevel Item" data-filter-tags="utilities menu child sublevel item">
+                                <span class="nav-link-text" data-i18n="nav.utilities_menu_child_sublevel_item">Active Item</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>*@
+</ul>
